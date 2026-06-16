@@ -283,33 +283,7 @@ body{
         }
         
         // Mobile-friendly form validation
-        function validateFormBeforeSubmit() {
-            var empName = document.getElementById('<%= txtEmployeeName.ClientID %>')?.value.trim();
-            var dob = document.getElementById('<%= txtdob.ClientID %>')?.value;
-            var mobile = document.getElementById('<%= txtmobile.ClientID %>')?.value;
-            var email = document.getElementById('<%= txtemail.ClientID %>')?.value;
-            var joining = document.getElementById('<%= txtjoiningdate.ClientID %>')?.value;
-            var dept = document.getElementById('<%= ddldepartment.ClientID %>')?.value;
-            var desig = document.getElementById('<%= ddldesignation.ClientID %>')?.value;
-            var country = document.getElementById('<%= ddlcountry.ClientID %>')?.value;
-
-            if (!empName || !dob || !mobile || !email || !joining || !dept || !desig || !country) {
-                alert('⚠️ Please fill all required fields (* marked)');
-                return false;
-            }
-
-            if (mobile.length !== 10) {
-                alert('⚠️ Mobile number must be exactly 10 digits');
-                return false;
-            }
-
-            if (!email.includes('@') || !email.includes('.')) {
-                alert('⚠️ Please enter a valid email address (e.g., name@company.com)');
-                return false;
-            }
-            
-            return true;
-        }
+        
         
         // Add loading effect on save button
         function showLoading(btn) {
@@ -401,12 +375,7 @@ body{
                         <div class="col-12 col-sm-6 col-md-4">
                             <label class="form-label required"><i class="fas fa-building"></i>Department</label>
                             <asp:DropDownList ID="ddldepartment" runat="server" CssClass="form-select">
-                                <asp:ListItem Text="-- Select Department --" Value=""></asp:ListItem>
-                                <asp:ListItem Text="IT" Value="IT"></asp:ListItem>
-                                <asp:ListItem Text="HR" Value="HR"></asp:ListItem>
-                                <asp:ListItem Text="Finance" Value="Finance"></asp:ListItem>
-                                <asp:ListItem Text="Marketing" Value="Marketing"></asp:ListItem>
-                                <asp:ListItem Text="Operations" Value="Operations"></asp:ListItem>
+                               
                             </asp:DropDownList>
                         </div>
 
@@ -414,12 +383,7 @@ body{
                         <div class="col-12 col-sm-6 col-md-4">
                             <label class="form-label required"><i class="fas fa-briefcase"></i>Designation</label>
                             <asp:DropDownList ID="ddldesignation" runat="server" CssClass="form-select">
-                                <asp:ListItem Text="-- Select Designation --" Value=""></asp:ListItem>
-                                <asp:ListItem Text="Software Engineer" Value="Software Engineer"></asp:ListItem>
-                                <asp:ListItem Text="Senior Developer" Value="Senior Developer"></asp:ListItem>
-                                <asp:ListItem Text="Project Manager" Value="Project Manager"></asp:ListItem>
-                                <asp:ListItem Text="HR Executive" Value="HR Executive"></asp:ListItem>
-                                <asp:ListItem Text="Accountant" Value="Accountant"></asp:ListItem>
+                                
                             </asp:DropDownList>
                         </div>
 
@@ -427,15 +391,7 @@ body{
                         <div class="col-12 col-sm-6 col-md-4">
                             <label class="form-label required"><i class="fas fa-tint"></i>Blood Group</label>
                             <asp:DropDownList ID="ddlbloodgroup" runat="server" CssClass="form-select">
-                                <asp:ListItem Text="-- Select --" Value=""></asp:ListItem>
-                                <asp:ListItem Text="A+" Value="A+"></asp:ListItem>
-                                <asp:ListItem Text="A-" Value="A-"></asp:ListItem>
-                                <asp:ListItem Text="B+" Value="B+"></asp:ListItem>
-                                <asp:ListItem Text="B-" Value="B-"></asp:ListItem>
-                                <asp:ListItem Text="O+" Value="O+"></asp:ListItem>
-                                <asp:ListItem Text="O-" Value="O-"></asp:ListItem>
-                                <asp:ListItem Text="AB+" Value="AB+"></asp:ListItem>
-                                <asp:ListItem Text="AB-" Value="AB-"></asp:ListItem>
+                                
                             </asp:DropDownList>
                         </div>
 
@@ -443,11 +399,7 @@ body{
                         <div class="col-12 col-sm-6 col-md-4">
                             <label class="form-label required"><i class="fas fa-globe"></i>Country</label>
                             <asp:DropDownList ID="ddlcountry" runat="server" CssClass="form-select" OnSelectedIndexChanged="ddlcountry_SelectedIndexChanged" AutoPostBack="true">
-                                <asp:ListItem Text="-- Select Country --" Value=""></asp:ListItem>
-                                <asp:ListItem Text="India" Value="India"></asp:ListItem>
-                                <asp:ListItem Text="USA" Value="USA"></asp:ListItem>
-                                <asp:ListItem Text="UK" Value="UK"></asp:ListItem>
-                                <asp:ListItem Text="Canada" Value="Canada"></asp:ListItem>
+                                
                             </asp:DropDownList>
                         </div>
 
